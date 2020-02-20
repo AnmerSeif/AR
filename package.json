@@ -1,0 +1,19 @@
+{
+  "name": "ar-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnmerSeif/AR-Test.git"
+  },
+  "author": "Adam Asskali and Anmer Seif",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/AnmerSeif/AR-Test/issues"
+  },
+  "homepage": "https://github.com/AnmerSeif/AR-Test#readme"
+}
