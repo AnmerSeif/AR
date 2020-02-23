@@ -4,47 +4,47 @@
          "bufferView" : 2,
          "byteOffset" : 0,
          "componentType" : 5126,
-         "count" : 2278,
-         "max" : [ 1, 1, 1, 1 ],
-         "min" : [ 0.1904628723859787, 0.2844520807266235, 0.3392233550548553, 1 ],
-         "name" : "accessor_color_m0-PolyPaper5_-89908",
+         "count" : 18,
+         "max" : [ 5.692175545846112e-05, 0.3344578146934509, 0.7893137335777283, 1 ],
+         "min" : [ 5.692175545846112e-05, 0.3344578146934509, 0.7893137335777283, 1 ],
+         "name" : "accessor_color_m0-PolyPaper5_-32836",
          "type" : "VEC4"
       },
       {
          "bufferView" : 0,
          "byteOffset" : 0,
          "componentType" : 5123,
-         "count" : 3252,
-         "max" : [ 2277 ],
+         "count" : 18,
+         "max" : [ 17 ],
          "min" : [ 0 ],
-         "name" : "accessor_indices_0_m0-PolyPaper5_-89908",
+         "name" : "accessor_indices_0_m0-PolyPaper5_-32836",
          "type" : "SCALAR"
       },
       {
          "bufferView" : 1,
-         "byteOffset" : 27336,
+         "byteOffset" : 216,
          "componentType" : 5126,
-         "count" : 2278,
-         "max" : [ 0.999902, 0.9998752, 0.9982838000000001 ],
-         "min" : [ -0.9994394, -0.9973445, -0.9931115 ],
-         "name" : "accessor_normal_m0-PolyPaper5_-89908",
+         "count" : 18,
+         "max" : [ 0.2661229, 0.9580435, 0.8944271 ],
+         "min" : [ -0.8944274, -0.9580438, -0.2661243 ],
+         "name" : "accessor_normal_m0-PolyPaper5_-32836",
          "type" : "VEC3"
       },
       {
          "bufferView" : 1,
          "byteOffset" : 0,
          "componentType" : 5126,
-         "count" : 2278,
-         "max" : [ 0.6907353000000001, -1.727501, -1.944728 ],
-         "min" : [ 0.3311824, -1.945806, -2.173849 ],
-         "name" : "accessor_position_m0-PolyPaper5_-89908",
+         "count" : 18,
+         "max" : [ 1.552031, -0.6940107, 2.077981 ],
+         "min" : [ -1.827969, -1.37001, -1.302017 ],
+         "name" : "accessor_position_m0-PolyPaper5_-32836",
          "type" : "VEC3"
       }
    ],
    "asset" : {
       "copyright" : "Unknown",
       "extras" : {
-         "GOOGLE_processor_version" : 294144208
+         "GOOGLE_processor_version" : 293297437
       },
       "generator" : "glTF 1-to-2 Upgrader for Google Blocks",
       "version" : "2.0"
@@ -52,23 +52,23 @@
    "bufferViews" : [
       {
          "buffer" : 0,
-         "byteLength" : 6504,
+         "byteLength" : 36,
          "byteOffset" : 0,
          "name" : "ushortBufferView",
          "target" : 34963
       },
       {
          "buffer" : 0,
-         "byteLength" : 54672,
-         "byteOffset" : 6504,
+         "byteLength" : 432,
+         "byteOffset" : 36,
          "byteStride" : 12,
          "name" : "vec3BufferView",
          "target" : 34962
       },
       {
          "buffer" : 0,
-         "byteLength" : 36448,
-         "byteOffset" : 61176,
+         "byteLength" : 288,
+         "byteOffset" : 468,
          "byteStride" : 16,
          "name" : "vec4BufferView",
          "target" : 34962
@@ -76,7 +76,7 @@
    ],
    "buffers" : [
       {
-         "byteLength" : 97624,
+         "byteLength" : 756,
          "name" : "model",
          "uri" : "model.bin"
       }
@@ -151,7 +151,7 @@
    ],
    "meshes" : [
       {
-         "name" : "mesh_m0-PolyPaper5_-89908",
+         "name" : "mesh_m0-PolyPaper5_-32836",
          "primitives" : [
             {
                "attributes" : {
@@ -169,7 +169,7 @@
    "nodes" : [
       {
          "mesh" : 0,
-         "name" : "node_MeshObject1729276928-PolyPaper5"
+         "name" : "node_MeshObject-1912240896-PolyPaper5"
       },
       {
          "children" : [ 2 ]
@@ -179,22 +179,23 @@
          "extras" : {
             "isTransformNode" : 1
          },
-         "translation" : [ 0.537747012207225, -1.836471503845494, -2.054577523436489 ]
+         "rotation" : [ 0, 0, 0, 0 ],
+         "translation" : [ -0.2592262827157974, -1.040460406541824, 0.1710986701647443 ]
       },
       {
          "children" : [ 0 ],
-         "translation" : [ -0.537747012207225, 1.836471503845494, 2.054577523436489 ]
+         "translation" : [ 0.2592262827157974, 1.040460406541824, -0.1710986701647443 ]
       },
       {
          "camera" : 0,
          "children" : [ 5 ],
          "rotation" : [
-            -0.221924054279278,
-            -0.2518950318538155,
-            -0.05946428056213485,
-            0.9400864887853889
+            -0.2474238979179837,
+            -0.1761029622146049,
+            -0.04578493681074635,
+            0.9516684827184037
          ],
-         "translation" : [ 0.3008847289243929, -1.599668262229921, -1.644381063933539 ]
+         "translation" : [ -2.738740394769155, 2.823734690438552, 6.64138989134339 ]
       },
       {
          "extensions" : {
@@ -206,7 +207,7 @@
             "isHeadLight" : 1
          },
          "name" : "headLightNode",
-         "translation" : [ -0.2690215005601392, 0.1345107502800696, 0.1345107502800696 ]
+         "translation" : [ -2.629022030965554, 1.314511015482777, 1.314511015482777 ]
       },
       {
          "extensions" : {
@@ -219,8 +220,8 @@
          },
          "name" : "keyLightNode",
          "rotation" : [ -0.7505326882858236, -0.3752663441429118, 0, 0.5439447166468927 ],
-         "scale" : [ 0, 0, 0.2717117155657406 ],
-         "translation" : [ 0.2875480688233668, -1.291348714491063, -2.330833405360095 ]
+         "scale" : [ 0, 0, 2.655312251275209 ],
+         "translation" : [ -2.793281387513308, 4.278613629391646, -2.267331139884486 ]
       }
    ],
    "scene" : 0,
@@ -228,11 +229,9 @@
       {
          "extensions" : {
             "GOOGLE_backgrounds" : {
-               "color" : [ 0, 0, 0 ]
+               "color" : [ 0.3764705882352941, 0.4901960784313725, 0.5450980392156862 ]
             },
-            "GOOGLE_camera_settings" : {
-               "pivot" : [ 0, 0, 0 ]
-            }
+            "GOOGLE_camera_settings" : {}
          },
          "extras" : {
             "GOOGLE_camera_index" : {
@@ -241,14 +240,14 @@
             },
             "GOOGLE_geometry_data" : {
                "stats" : {
-                  "centroid" : [ 0.5592597843891074, -1.834772145622545, -2.059121689794355 ],
-                  "radius" : 0.2690215005601392,
-                  "stdev" : 0.1096724098625451
+                  "centroid" : [ -0.1379691362380981, -1.032010873158773, 0.3879811113907231 ],
+                  "radius" : 2.629022030965554,
+                  "stdev" : 1.59802631543546
                },
-               "visualCenterPoint" : [ 0.537747012207225, -1.836471503845494, -2.054577523436489 ]
+               "visualCenterPoint" : [ -0.2592262827157974, -1.040460406541824, 0.1710986701647443 ]
             },
             "GOOGLE_hemi_light" : {
-               "groundColor" : [ 0, 0, 0 ]
+               "groundColor" : [ 0.3764705882352941, 0.4901960784313725, 0.5450980392156862 ]
             }
          },
          "name" : "defaultScene",
