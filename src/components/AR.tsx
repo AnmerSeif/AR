@@ -1,40 +1,31 @@
-import React, { useEffect, useState, Suspense } from 'react';
-import { Canvas, useThree, Dom, useLoader } from 'react-three-fiber'
-import { ARButton } from 'three/examples/jsm/webxr/ARButton';
+import React from "react";
+import { Canvas, CanvasContext } from "react-three-fiber";
 
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-// @ts-ignore
-import arrowGLTF from '../models/arrow/model.gltf';
-
-import Stars from './Stars';
-
-const Arrow : React.FC = () => {
-    const gltf = useLoader(GLTFLoader, arrowGLTF);
-    const { gl } = useThree();
-    useEffect(() => {
-        gl.setPixelRatio( window.devicePixelRatio );
-        gl.setSize( window.innerWidth, window.innerHeight );
-    }, [gl])
-    return <primitive object={gltf.scene} />
-  }
-
-
+import Stars from "./Stars";
+import { WebGLRenderer } from "three";
 
 const Scene: React.FC = () => {
-    return <Stars count={1500} />
+  return <Stars count={1500} />;
+};
+
+interface ARProps {
+  setGL: (gl: WebGLRenderer) => void;
 }
 
-const AR: React.FC = () => {
-    return (
-        <>
-            <Canvas vr onCreated={({gl}) => { document.body.appendChild(ARButton.createButton(gl))}}>
-                <ambientLight />
-                <pointLight position={[10, 10, 10]} />
-                <Scene />
-                <Suspense fallback={<Dom><h1>Loading..</h1></Dom>}><Arrow /></Suspense>
-            </Canvas>
-        </>
-    )
-}
+const AR: React.FC<ARProps> = ({ setGL }) => {
+  const onCreated = ({ gl }: CanvasContext) => {
+    setGL(gl);
+    gl.setPixelRatio(window.devicePixelRatio);
+    gl.setSize(window.innerWidth, window.innerHeight);
+  };
 
-export default AR; 
+  return (
+    <Canvas onCreated={onCreated} vr>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <Scene />
+    </Canvas>
+  );
+};
+
+export default AR;
