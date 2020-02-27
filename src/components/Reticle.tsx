@@ -1,14 +1,12 @@
-import React, { useRef, useEffect, useContext } from "react";
+import React, { useRef, useEffect } from "react";
 import { RingBufferGeometry, Mesh } from "three";
 import { useAR, api } from "../App";
 import shallow from "zustand/shallow";
 
 const Reticle: React.FC = () => {
-  const { reticleVisible, hitMatrix, session } = useAR(
+  const { reticleVisible } = useAR(
     state => ({
-      reticleVisible: state.reticleVisible,
-      hitMatrix: state.hitMatrix,
-      session: state.session
+      reticleVisible: state.reticleVisible
     }),
     shallow
   );
@@ -20,7 +18,7 @@ const Reticle: React.FC = () => {
       ringBufferGeometry.current.rotateX(-Math.PI / 2);
     }
 
-    const unsub = api.subscribe(
+    api.subscribe(
       hitMatrix => {
         reticle.current?.matrix.fromArray(hitMatrix as Float32Array);
       },

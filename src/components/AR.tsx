@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { Canvas, CanvasContext } from "react-three-fiber";
 
 import Stars from "./Stars";
