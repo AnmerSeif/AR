@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Canvas, CanvasContext } from "react-three-fiber";
 
 import Stars from "./Stars";
-import { WebGLRenderer } from "three";
+import Reticle from "./Reticle";
+import { useAR } from "../App";
 
 const Scene: React.FC = () => {
   return <Stars count={1500} />;
 };
 
-interface ARProps {
-  setGL: (gl: WebGLRenderer) => void;
-}
-
-const AR: React.FC<ARProps> = ({ setGL }) => {
+const AR: React.FC = () => {
+  const setGL = useAR(state => state.setGL);
   const onCreated = ({ gl }: CanvasContext) => {
     setGL(gl);
     gl.setPixelRatio(window.devicePixelRatio);
@@ -24,6 +22,7 @@ const AR: React.FC<ARProps> = ({ setGL }) => {
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Scene />
+      <Reticle />
     </Canvas>
   );
 };

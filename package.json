@@ -13,7 +13,8 @@
     "react-three-fiber": "^4.0.17",
     "styled-components": "^5.0.1",
     "three": "^0.113.2",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.2",
+    "zustand": "^2.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,7 +24,9 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-    "plugins": ["prettier"],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "prettier/prettier": "error"
     }

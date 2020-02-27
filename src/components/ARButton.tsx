@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import Session, { SessionType } from "../models/Session";
-import { ArAppContext } from "../App";
-import { WebGLRenderer } from "three";
+import { useAR } from "../App";
+import shallow from "zustand/shallow";
 
 const Button = styled.button`
   position: fixed;
@@ -21,12 +21,27 @@ const Button = styled.button`
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 `;
 
-interface ARButtonProps {
-  gl: WebGLRenderer;
-}
-
-const ARButton: React.FC<ARButtonProps> = ({ gl }) => {
-  const { session, setSession } = useContext(ArAppContext);
+const ARButton: React.FC = () => {
+  const {
+    gl,
+    session,
+    setSession,
+    ray,
+    matrix,
+    setHitMatrix,
+    setReticleVisible
+  } = useAR(
+    state => ({
+      gl: state.gl,
+      session: state.session,
+      setSession: state.setSession,
+      ray: state.ray,
+      matrix: state.matrix,
+      setHitMatrix: state.setHitMatrix,
+      setReticleVisible: state.setReticleVisible
+    }),
+    shallow
+  );
 
   const onSessionStarted = (session: Session) => {
     setSession(session);
@@ -37,7 +52,27 @@ const ARButton: React.FC<ARButtonProps> = ({ gl }) => {
     const onXRFrame = (time: number, frame: any) => {
       const referenceSpace = gl.xr.getReferenceSpace();
       const pose = frame.getViewerPose(referenceSpace);
+
       if (pose) {
+        matrix.fromArray(pose.transform.matrix);
+
+        ray.origin.set(0, 0, 0);
+        ray.direction.set(0, 0, -1);
+        ray.applyMatrix4(matrix);
+
+        // @ts-ignore
+        const xrRay = new XRRay(ray.origin, ray.direction);
+
+        session.requestHitTest(xrRay, referenceSpace).then((results: any) => {
+          if (results.length) {
+            var hitResult = results[0];
+
+            setReticleVisible(true);
+            setHitMatrix(hitResult.hitMatrix);
+          } else {
+            setReticleVisible(false);
+          }
+        });
       }
       session.requestAnimationFrame(onXRFrame);
     };
